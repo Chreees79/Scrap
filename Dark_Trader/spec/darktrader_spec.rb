@@ -1,10 +1,11 @@
 require_relative '../lib/darktrader'
 
-#----- VARIABLES -------
+#----- VARIABLES ----------------------------------------------------------------
 page = Nokogiri::HTML(URI.open("https://coinmarketcap.com/all/views/all/"))
 all_crypto_indice = page.xpath('//tbody/tr/td/div[@class="sc-131di3y-0 cLgOOr"]/a/span')
 all_crypto_symbol = page.xpath('//tbody/tr/td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--left cmc-table__cell--hide-sm cmc-table__cell--sort-by__symbol"]/div')
 
+#------ TESTS -------------------------------------------------------------------
 describe "the crypto" do
   it "should return the result of fonction calc_count" do
       expect(calc_count(method_trader(all_crypto_indice, all_crypto_symbol))).to eq(20)

@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-
+#----------------- Méthode pour récupérer chaque URL des mairies _________________
 def first(url)
     
     html = URI.open("#{url}").read
@@ -12,6 +12,7 @@ def first(url)
     end
     return arr
 end
+#---------------- Méthode pour changer les URL pour être exploitables pour les emails---
 
 def change_url
   array = []
@@ -22,6 +23,7 @@ def change_url
     end
     return array
 end
+#--------------- Méthode pour Mettre en hash les éléments (noms de ville, email) récupérés-----
 
 def final_task(liens)
 link_parse = []
@@ -38,6 +40,9 @@ link_parse.each do |lien|
 end
   my_hash = name_villes.zip(email_villes).to_h
   arr3 = my_hash.map {|name,email| {name => email}}
-  return arr3
 end
-puts final_task(change_url)
+#---------------------------------------------------------------------------------------
+puts " "
+puts "----------------------     CHARGEMENT EN COURS      ----------------------------------------"
+puts " "
+puts final_task(change_url).inspect

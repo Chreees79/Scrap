@@ -1,8 +1,8 @@
 require_relative "../lib/mairie2"
-#------- PATH ------------
+#------- PATH --------------------------------------------------------------------
 url = "https://www.annuaire-des-mairies.com/val-d-oise.html"
 
-#-------- TEST ------------
+#-------- TEST --------------------------------------------------------------------
 describe "the name of city" do
   it "should return true if the name of the city is present in array" do
     expect(change_url.include? ("https://www.annuaire-des-mairies.com/95/aincourt.html")).to eq(true)
