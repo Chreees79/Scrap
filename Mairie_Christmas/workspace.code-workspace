@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../dotenv_test"
+		},
+		{
+			"path": "../TDD"
+		},
+		{
+			"path": "../scrappeur"
+		},
+		{
+			"path": "../Dark_Trader"
+		},
+		{
+			"path": "."
+		}
+	]
+}
